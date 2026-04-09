@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Stopwatch from "./pages/Stopwatch";
 import Layout from "./layouts/Layout";
-import Layout from "./layouts/Layout";
 import TodoApp from "./pages/TodoApp";
 import ProjectLayout from "./layouts/ProjectLayout";
 
