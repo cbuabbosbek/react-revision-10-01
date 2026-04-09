@@ -41,3 +41,10 @@ nav ul li a:hover{
     text-decoration: underline;
     color: #000;
 }
+
+/* ====   layout ===== */
+.container {
+    max-width: 1200px;
+    /* border: 1px solid red; */
+    margin: 1rem auto;
+}
