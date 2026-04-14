@@ -8,13 +8,15 @@ function Stopwatch() {
     console.log("clicked...");
     setTimer(!timer);
     setInterval(() => {
-      setTime(time + 1);
-    }, 1000);
+      setTime((prev) => prev + 1);
+    }, 100);
   };
 
   const reset = () => {
     console.log("clicked...");
     setTimer(false);
+    setTime(0)
+    clearInterval()
   };
 
   return (
