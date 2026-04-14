@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router";
 function ProjectLayout() {
   return (
     <>
-      <div>
+      <div className="text-left">
         <Link to={"/projects"}>
           <i class="fa-solid fa-left-long"></i>
         </Link>
