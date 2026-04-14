@@ -5,6 +5,14 @@
     transition: all 0.4s;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -21,7 +29,6 @@ nav .logo {
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     gap: 1rem;
 }
@@ -31,7 +38,6 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
     color: #444;
     font-size: 20px;
     padding: 4px 6px;
@@ -44,7 +50,24 @@ nav ul li a:hover{
 
 /* ====   layout ===== */
 .container {
+    width: 90%;
     max-width: 1200px;
-    /* border: 1px solid red; */
     margin: 1rem auto;
+}
+
+.fa-left-long {
+    color: black;
+}
+
+.projects-wrap {
+    margin: 1rem auto;
+}
+
+.projects-wrap ul li a {
+    font-size: 1.4rem;
+    color: rgb(77, 77, 77);
+} 
+
+.projects-wrap ul li {
+    margin-bottom: 0.5rem;
 }
