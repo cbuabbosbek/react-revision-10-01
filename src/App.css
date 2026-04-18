@@ -105,3 +105,57 @@ nav ul li a:hover{
 .btn-stop {
     background-color: red;
 }
+
+
+input {
+    border: 2px solid blue;
+    border-radius: 5px;
+    height: 4vh;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.input button {
+    background-color: rgb(201, 107, 255);
+    color: white;
+    text-decoration: none;
+    height:33px;
+    width: 60px;
+    border-radius: 5px;
+    margin-left: 1vh;
+    border: none;
+    cursor: pointer;
+   
+    
+}
+.BoardBox button  {
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    height: 4vh;
+    width: 60px;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.BoardBox h1 {
+
+    font-size: 20px;
+}
+.BoardBox {
+    border: 0.5px solid rgb(147, 132, 132);
+   width: 31%;
+    padding: 40px;
+    border-radius: 5px;
+   
+ 
+    
+
+}
+.Board {
+    display: flex;
+    gap:10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
