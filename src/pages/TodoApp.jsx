@@ -2,30 +2,54 @@ import { useState } from "react";
 import { Link } from "react-router";
 
 function TodoApp() {
+  const [todoText, setTodoText] = useState("");
+
   const [todos, setTodos] = useState([
     {
       id: 1,
       title: "Go to school",
     },
-    {
-      id: 2,
-      title: "Play Football",
-    },
   ]);
+
+  const onAddBtnClick = () => {
+    console.log(todoText);
+
+    let newTodo = {
+      title: todoText,
+      id: todos.length + 7,
+    };
+
+    setTodos([...todos, newTodo]);
+
+    setTodoText("");
+  };
+
+  const onDeleteBtnClick = (id) => {
+    console.log(`Delete ${id}`);
+
+    let filteredTodos = todos.filter((t) => t.id !== id);
+
+    setTodos(filteredTodos);
+  };
 
   return (
     <>
       <h1>2. TodoApp</h1>
       <div className="input">
-        <input type="text" placeholder="Add a task" />
-        <button>Add</button>
+        <input
+          value={todoText}
+          onChange={(e) => setTodoText(e.target.value)}
+          type="text"
+          placeholder="Add a task"
+        />
+        <button onClick={onAddBtnClick}>Add</button>
       </div>
       <div className="Board">
         {todos.map((t) => {
           return (
             <div key={t.id} className="BoardBox">
               <h1> {t.title} </h1>
-              <button>Delete</button>
+              <button onClick={() => onDeleteBtnClick(t.id)}>Delete</button>
             </div>
           );
         })}
