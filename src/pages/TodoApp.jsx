@@ -13,15 +13,18 @@ function TodoApp() {
 
   const onAddBtnClick = () => {
     console.log(todoText);
+    if (todoText !== "") {
+      let newTodo = {
+        title: todoText,
+        id: todos.length + 7,
+      };
 
-    let newTodo = {
-      title: todoText,
-      id: todos.length + 7,
-    };
+      setTodos([...todos, newTodo]);
 
-    setTodos([...todos, newTodo]);
-
-    setTodoText("");
+      setTodoText("");
+    } else {
+      alert("Malumotni to'ldiring, u bo'sh bo'lishi mumkin emas.");
+    }
   };
 
   const onDeleteBtnClick = (id) => {
