@@ -13,7 +13,7 @@ function TodoApp() {
 
   const onAddBtnClick = () => {
     console.log(todoText);
-    if (todoText !== "") {
+    if (todoText.trim() !== "") {
       let newTodo = {
         title: todoText,
         id: todos.length + 7,
