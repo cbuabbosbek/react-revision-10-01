@@ -39,13 +39,20 @@ function TodoApp() {
     <>
       <h1>2. TodoApp</h1>
       <div className="input">
-        <input
-          value={todoText}
-          onChange={(e) => setTodoText(e.target.value)}
-          type="text"
-          placeholder="Add a task"
-        />
-        <button onClick={onAddBtnClick}>Add</button>
+        <form onSubmit={(e) => e.preventDefault()} method="GET">
+          <input
+            onKeyDown={(e) => {
+              if (e.key == "Enter") onAddBtnClick();
+            }}
+            value={todoText}
+            onChange={(e) => setTodoText(e.target.value)}
+            type="text"
+            placeholder="Add a task"
+          />
+          <button type="button" onClick={onAddBtnClick}>
+            Add
+          </button>
+        </form>
       </div>
       <div className="Board">
         {todos.map((t) => {
