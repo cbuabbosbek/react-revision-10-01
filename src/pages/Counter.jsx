@@ -3,16 +3,17 @@ import { useEffect, useState } from "react";
 function CounterApp() {
   const [items, setItems] = useState(0);
   const [counters, setCounters] = useState([
-    { id: 1, count: 0 },
-    { id: 2, count: 0 },
-    { id: 3, count: 0 },
-    { id: 4, count: 0 },
+    { id: 1, count: 0, added: false },
+    { id: 2, count: 0, added: false },
+    { id: 3, count: 0, added: false },
+    { id: 4, count: 0, added: false },
   ]);
 
   const plus = (id) => {
     let newCounters = counters.map((c) => {
       if (c.id == id) {
         c.count++;
+        if (!c.added) c.added = true;
       }
       return c;
     });
@@ -25,6 +26,9 @@ function CounterApp() {
       if (c.id == id && c.count > 0) {
         c.count--;
       }
+      if (c.id == id && c.count == 0) {
+        c.added = false;
+      }
       return c;
     });
 
@@ -32,10 +36,13 @@ function CounterApp() {
   };
 
   useEffect(() => {
+    let count = 0;
     counters.forEach((c) => {
-      if (c.count == 1) {
-        setItems((prev) => prev + 1);
+      if (c.count > 0) {
+        count++;
       }
+
+      setItems(count);
     });
   }, [counters]);
 
