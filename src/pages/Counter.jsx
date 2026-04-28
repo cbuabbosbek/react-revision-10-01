@@ -35,6 +35,12 @@ function CounterApp() {
     setCounters(newCounters);
   };
 
+  const deleteCounter = (id) => {
+    let filteredCounters = counters.filter((c) => c.id != id);
+
+    setCounters(filteredCounters);
+  };
+
   useEffect(() => {
     let count = 0;
     counters.forEach((c) => {
@@ -72,7 +78,10 @@ function CounterApp() {
                 <button onClick={() => minus(c.id)} className="btn btn-stop">
                   -
                 </button>
-                <i class="fa-solid fa-trash"></i>
+                <i
+                  class="fa-solid fa-trash"
+                  onClick={() => deleteCounter(c.id)}
+                ></i>
               </div>
             );
           })}
