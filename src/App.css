@@ -179,6 +179,16 @@ input {
   font-size: 2rem;
 }
 
+.inactive {
+  color: gray;
+  cursor: not-allowed;
+}
+
+.active {
+  color: #17a2b8;
+  cursor: pointer;
+}
+
 .counter-items {
   display: inline-block;
   /* color: white; */
@@ -204,15 +214,4 @@ input {
   margin: 20px auto;
 }
 
-.m-10 i {
-  cursor: pointer;
-  color: #17a2b8;
-}
 
-.m-10 i:hover {
-  color: #0c6c7b;
-}
-
-.m-10 i:active {
-  color: #444;
-}
